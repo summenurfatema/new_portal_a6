@@ -55,15 +55,31 @@
 
 
         </section>
-        <!-- amount of founded news -->
-        <div class="bg-light my-3 text-center mx-auto pt-2" style="height: 50px;width: 400px;">
-            <h3 id="number-of-news"></h3>
-        </div>
-        <section class="article-container ">
 
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div id="art-div" class="mx-5 ">
-                    <!-- <div class="col">
+        <!-- spiner -->
+        <section id="loader" class="mt-2 d-none">
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </section>
+        <section>
+
+            <!-- amount of founded news -->
+            <!-- <div class="bg-info" id="sort">
+                <h3>sort</h3>
+            </div> -->
+            <div class="bg-light my-3 text-center mx-auto pt-2" style="height: 50px;width: 400px;">
+                <h3 id="number-of-news"></h3>
+            </div>
+            <section class="article-container ">
+
+
+
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div id="art-div" class="mx-5 ">
+                        <!-- <div class="col">
                 <div class="card">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
@@ -71,33 +87,37 @@
                   <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 </div>
             </div> -->
+                    </div>
                 </div>
-            </div>
 
-        </section>
-        <!-- news found -->
 
-        <section>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel"></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body" id="modal-body1">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
 
+
+            </section>
+            <!-- news found -->
+
+            <section>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" id="modal-body1">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
 
 
