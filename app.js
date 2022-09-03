@@ -165,6 +165,9 @@ const displayModal = newses => {
     }
     if (newses.data[0].author.published_date === null) {
         newses.data[0].author.published_date = 'No date available'
+    }
+    if (newses.data[0].title === null || newses.data[0].title === ' ') {
+        newses.data[0].title = 'No title available'
 
     }
 
