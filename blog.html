@@ -13,7 +13,7 @@
 <body>
 
     <header class="d-flex justify-content-between">
-        <div class="bg-info text-white fs-5 fw-bold my-3 p-2">News Everyday</div>
+        <h2 class="fs-5 fw-bold my-3 p-2"><span class="bg-info text-white p-2 border rounded">BD</span> News</h2>
         <!-- nav -->
 
 
@@ -40,53 +40,85 @@
 
     </header>
     <main class="container mt-4">
-        <h3>Difference between var let const !!!</h3>
-
-        <h5>
-            Var : The var is the oldest keyword to declare a variable in JavaScript.By using Var we can update it's key
-            value.
-            <br>
-            <br>
-            Let : The let is the updated keyword to declare a variable in JavaScript.let can be updated but not
-            re-declared..
-            <br>
-            <br>
-            Const : Variables declared with the const maintain constant values.Const neither can be updated nor
-            re-declareable..
-        </h5>
 
 
-        <br>
-        <br>
-        <h3>Difference between regular function and arrow function !!!</h3>
-        <br>
-        <h5>
-            Arrow functions a new feature introduced in ES6 in JavaScript. While both regular and arrow functions work
-            in a similar manner, yet there are certain interesting differences between them.
-            Regular function : Regular functions created using function declarations or expressions are constructible
-            and callable.
-            However, the arrow functions are only callable and not constructible.
-        </h5>
-        <br>
-        <br>
-        <h3>Differcence amoung map,forEach,filter & find !!! </h3>
-        <br>
-        <h5>
-            Map :map makes an array unique generate a new array based on existing array.map modifies the array elements
-            and save them into the new array.
-            <br>
-            <br>
-            forEach : Foreach takes a callback function and run that callback function on each element of array one by
-            one.
-            <br>
-            <br>
-            filter : filter executes the callback and check its return value. filter does not update the existing array
-            it will return a new filtered array every time.
-            <br>
-            <br>
-            find : find always pass a single element from an array .It starts a loop from the beginning. But it stops
-            when the condition is matched.
-        </h5>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Difference between var let const !!!
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"> Var : The var is the oldest keyword to declare a variable in
+                        JavaScript.By using Var we can update it's key
+                        value.
+                        <br>
+                        <br>
+                        Let : The let is the updated keyword to declare a variable in JavaScript.let can be updated but
+                        not
+                        re-declared..
+                        <br>
+                        <br>
+                        Const : Variables declared with the const maintain constant values.Const neither can be updated
+                        nor
+                        re-declareable.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Difference between regular function and arrow function !!!
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"> Arrow functions a new feature introduced in ES6 in JavaScript. While
+                        both regular and arrow functions work
+                        in a similar manner, yet there are certain interesting differences between them.
+                        Regular function : Regular functions created using function declarations or expressions are
+                        constructible
+                        and callable.
+                        However, the arrow functions are only callable and not constructible.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Differcence amoung map,forEach,filter & find !!!
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"> Map :map makes an array unique generate a new array based on existing
+                        array.map modifies the array elements
+                        and save them into the new array.
+                        <br>
+                        <br>
+                        forEach : Foreach takes a callback function and run that callback function on each element of
+                        array one by
+                        one.
+                        <br>
+                        <br>
+                        filter : filter executes the callback and check its return value. filter does not update the
+                        existing array
+                        it will return a new filtered array every time.
+                        <br>
+                        <br>
+                        find : find always pass a single element from an array .It starts a loop from the beginning. But
+                        it stops
+                        when the condition is matched.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"

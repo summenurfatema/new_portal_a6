@@ -62,67 +62,68 @@ const displayArticals = (articals) => {
 
     const number = document.getElementById('number-of-news')
     if (articals.length !== 0) {
-        number.innerText = articals.length + ' ' + 'News has founded';
+        number.innerText = articals.length + ' ' + 'News found';
     }
 
     else { number.innerText = 'No news available' }
 
-    const artContainer = document.getElementById('art-div');
+    const artContainer = document.getElementById('article-container');
     artContainer.textContent = '';
 
 
     for (const article of articals) {
         //console.log(article)
-        const loop = document.createElement('div')
 
-        loop.classList.add("col")
+        const artDiv = document.createElement('div')
+        artDiv.classList.add('col')
 
-        loop.innerHTML = `
+        artDiv.innerHTML = `
 
-        <div class="card my-3 shadow-lg p-3 mb-5 bg-body rounded" style="width:800px;height:300px">
-    
-                <div class="d-flex p-2">
-                        <div style="width:300px;height:270px"> 
-                            <img src="${article.thumbnail_url}" class="w-100 h-100 p-3" alt="...">
-                        </div>
+        <div class="card m-3">
+        <img src="${article.thumbnail_url}" class="card-img-top h-50" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${article.title}</h5>
+          <p id="des" class="title-text mb-3">${article.details}</p>
 
-                        <div class="card-body" style="width:500px">
-                <h5 class="card-title mb-3">${article.title}</h5>
-                <p id="des" class="title-text mb-3">${article.details}</p</div>
-                <div class="d-flex ">
-                    <div>
-                        <img style="width:50px;height:50px" class="border rounded-circle" src="${article.author.img}">
-                    </div>
 
-                    <div>
-                        <p>${article.author.name}</p>
-                        <p>${article.author.published_date}</p>
-                    </div>
-                    <div class="me-5">
-                        <p><i class="fa-sharp fa-solid fa-eye"></i>${article.total_view}</p>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-star"></i>
+        <div class="d-flex">
+
+            <div class="d-flex">
+                <div>
+                <img style="width:50px;height:50px" class="border rounded-circle" src="${article.author.img}">
+                </div>
+
+                <div>
+                <p>${article.author.name}</p>
+                <p>${article.author.published_date}</p>
+                </div>
+            </div>
+
+
+            <div><p><i class="fa-sharp fa-solid fa-eye"></i>${article.total_view}</p></div>
+
+            <div class="ms-4">
+            <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-
-
-
-                </div>
-                <button onclick="openModal('${article._id}')" type="button" class="btn btn-info text-white fw-semibold mt-1"
-                    data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    See details
-                </button>
             </div>
+                
+        </div>
+        <button onclick="openModal('${article._id}')" type="button" class="btn btn-info text-white fw-semibold mt-1"
+        data-bs-toggle="modal" data-bs-target="#exampleModal">
+        See details
+    </button>
         </div>
 
 
+
+            
 `;
-        artContainer.appendChild(loop)
+        artContainer.appendChild(artDiv)
     }
+
 
     toggleSpiner(false)
 
