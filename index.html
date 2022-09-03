@@ -21,18 +21,48 @@
 <body>
     <main class="container mx-auto">
         <header class="d-flex justify-content-between">
-            <div class="bg-primary">hi</div>
-            <div class="bg-success">hello</div>
-        </header>
-        <!-- catagory onclick="loadArticals(`${category.category_id}`)"-->
+            <div class="bg-info text-white fs-5 fw-bold my-3 p-2">News Everyday</div>
+            <!-- nav -->
 
-        <section class="bg-light p-2 d-flex justify-content-around" id="category-container">
+            <nav class="navbar navbar-expand-lg bg-light my-2">
+                <div class="container-fluid">
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link active bg-info text-white" aria-current="page" href="#">News</a>
+
+                            <a class="nav-link" href="#">Blogs</a>
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+        </header>
+        <!--
+ -->
+
+        <!-- catagory-->
+
+        <section
+            class="bg-light p-2 d-flex justify-content-around d-flex flex-column d-sm-flex flex-sm-column d-md-flex flex-md-row d-lg-flex flex-lg-row"
+            id="category-container">
+
 
         </section>
-        <section class="article-container">
+        <!-- amount of founded news -->
+        <div class="bg-light my-3 text-center mx-auto pt-2" style="height: 50px;width: 400px;">
+            <h3 id="number-of-news"></h3>
+        </div>
+        <section class="article-container ">
 
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div id="art-div" class="mx-5">
+                <div id="art-div" class="mx-5 ">
                     <!-- <div class="col">
                 <div class="card">
                 <img src="..." class="card-img-top" alt="...">
@@ -44,6 +74,29 @@
                 </div>
             </div>
 
+        </section>
+        <!-- news found -->
+
+        <section>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="modal-body1">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
 
