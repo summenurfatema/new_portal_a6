@@ -21,7 +21,7 @@ const displayCategories = (categories) => {
     const categoryContainer = document.getElementById('category-container');
 
     for (const category of categories) {
-
+        console.log(category)
 
         const categoryDiv = document.createElement('div');
 
@@ -30,6 +30,7 @@ const displayCategories = (categories) => {
         categoryDiv.onclick = function () {
             loadArticals(`${category.category_id}`)
             toggleSpiner(true)
+
 
         }
         categoryContainer.appendChild(categoryDiv);
@@ -52,7 +53,12 @@ const loadArticals = async (category_id) => {
 
 
 const displayArticals = (articals) => {
-    console.log(articals)
+    //console.log(articals)
+    //sorted
+    articals.sort(function (a, b) {
+        return b.total_view - a.total_view;
+    });
+
 
     const number = document.getElementById('number-of-news')
     if (articals.length !== 0) {
@@ -66,20 +72,23 @@ const displayArticals = (articals) => {
 
 
     for (const article of articals) {
-        console.log(article)
+        //console.log(article)
         const loop = document.createElement('div')
+
         loop.classList.add("col")
 
         loop.innerHTML = `
 
-        <div class="card" style="width:800px;height:270px">
-    <div class="d-sm-flex flex-sm-column">
-        <div class="d-flex p-2">
-            <div style="width:300px;height:270px"> <img src="${article.thumbnail_url}" class="w-100 h-100 p-3"
-                    alt="..."></div>
-            <div class="card-body" style="width:500px">
+        <div class="card my-3 shadow-lg p-3 mb-5 bg-body rounded" style="width:800px;height:300px">
+    
+                <div class="d-flex p-2">
+                        <div style="width:300px;height:270px"> 
+                            <img src="${article.thumbnail_url}" class="w-100 h-100 p-3" alt="...">
+                        </div>
+
+                        <div class="card-body" style="width:500px">
                 <h5 class="card-title mb-3">${article.title}</h5>
-                <p id="des" class="card-text mb-3">${article.details}</p </div>
+                <p id="des" class="title-text mb-3">${article.details}</p</div>
                 <div class="d-flex ">
                     <div>
                         <img style="width:50px;height:50px" class="border rounded-circle" src="${article.author.img}">
@@ -103,13 +112,13 @@ const displayArticals = (articals) => {
 
 
                 </div>
-                <button onclick="openModal('${article._id}')" type="button" class="btn btn-info mt-1"
+                <button onclick="openModal('${article._id}')" type="button" class="btn btn-info text-white fw-semibold mt-1"
                     data-bs-toggle="modal" data-bs-target="#exampleModal">
                     See details
                 </button>
             </div>
         </div>
-    </div>
+
 
 `;
         artContainer.appendChild(loop)
@@ -133,9 +142,17 @@ const openModal = async (news_id) => {
 const displayModal = newses => {
 
     //sort
+    // function sorted(a, b) {
+    //     if (a.total_view > b.total_view) {
+    //         return 1;
 
+    //     }
+    //     else { return -1 }
+
+    // }
 
     // console.log(newses.data[0])
+
 
 
 
@@ -156,6 +173,8 @@ const displayModal = newses => {
         newses.data[0].author.published_date = 'No date available'
 
     }
+
+
     modalbody.innerHTML = `
     <img class="w-100"  src="${newses.data[0].image_url}"
     
