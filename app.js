@@ -11,7 +11,7 @@ const loadCategories = async () => {
         displayCategories(data.data.news_category);
     }
     catch (error) {
-        loadCategories([]);
+        alert(`The Error : ${error}`);
     }
 
 }
@@ -20,7 +20,7 @@ const loadCategories = async () => {
 
 
 const displayCategories = (categories) => {
-    console.log(categories)
+
     const categoryContainer = document.getElementById('category-container');
 
     for (const category of categories) {
@@ -50,7 +50,7 @@ const loadArticles = async (category_id) => {
         const data = await res.json()
         displayArticles(data.data);
     } catch (error) {
-        loadArticles([])
+        alert(`The Error : ${error}`);
     }
 }
 
@@ -140,7 +140,7 @@ const openModal = async (news_id) => {
         displayModal(data);
 
     } catch (error) {
-        console.log(error)
+        alert(`The Error : ${error}`);
     }
 }
 
