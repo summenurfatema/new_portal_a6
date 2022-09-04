@@ -2,7 +2,7 @@
 
 //---------------------------- Load Categories--------------------------//
 
-const loadCategory = async () => {
+const loadCategories = async () => {
     try {
         const url = `https://openapi.programming-hero.com/api/news/categories`
         const res = await fetch(url)
@@ -11,7 +11,7 @@ const loadCategory = async () => {
         displayCategories(data.data.news_category);
     }
     catch (error) {
-        loadCategory([]);
+        loadCategories([]);
     }
 
 }
@@ -24,13 +24,12 @@ const displayCategories = (categories) => {
     const categoryContainer = document.getElementById('category-container');
 
     for (const category of categories) {
-        console.log(category)
 
         const categoryDiv = document.createElement('div');
 
         categoryDiv.innerHTML = `${category.category_name}`;
         categoryDiv.onclick = function () {
-            loadArticals(`${category.category_id}`)
+            loadArticles(`${category.category_id}`)
             toggleSpiner(true)
         }
         categoryContainer.appendChild(categoryDiv);
@@ -43,51 +42,51 @@ const displayCategories = (categories) => {
 // ------------------------------Load All Articals----------------------------------//
 
 
-const loadArticals = async (category_id) => {
+const loadArticles = async (category_id) => {
 
     try {
         const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`
         const res = await fetch(url)
         const data = await res.json()
-        displayArticals(data.data);
+        displayArticles(data.data);
     } catch (error) {
-        loadArticals([])
+        loadArticles([])
     }
 }
 
 // -----------------------------Display All Article------------------------//
 
-const displayArticals = (articals) => {
+const displayArticles = (articles) => {
 
     //------Sort------//
 
-    articals.sort(function (a, b) {
+    articles.sort(function (a, b) {
         return b.total_view - a.total_view;
     });
 
     const number = document.getElementById('number-of-news')
-    if (articals.length !== 0) {
-        number.innerText = articals.length + ' ' + 'News found';
+    if (articles.length !== 0) {
+        number.innerText = articles.length + ' ' + 'News found';
     }
 
     else { number.innerText = 'No news available' }
 
-    const artContainer = document.getElementById('article-container');
-    artContainer.textContent = '';
+    const articleContainer = document.getElementById('article-container');
+    articleContainer.textContent = '';
 
 
-    for (const article of articals) {
+    for (const article of articles) {
 
-        const artDiv = document.createElement('div')
-        artDiv.classList.add('col')
+        const articleDiv = document.createElement('div')
+        articleDiv.classList.add('col')
 
-        artDiv.innerHTML = `
+        articleDiv.innerHTML = `
 
         <div class="card m-3">
             <img src="${article.thumbnail_url}" class="card-img-top h-50" alt="...">
         <div class="card-body">
             <h5 class="card-title">${article.title}</h5>
-            <p id="des" class="title-text mb-3">${article.details}</p>
+            <p id="description" class="title-text mb-3">${article.details}</p>
 
 
         <div class="d-flex">
@@ -123,7 +122,7 @@ const displayArticals = (articals) => {
 
         </div>        
 `;
-        artContainer.appendChild(artDiv)
+        articleContainer.appendChild(articleDiv)
     }
 
     toggleSpiner(false)
@@ -150,7 +149,7 @@ const displayModal = newses => {
 
     const modalTitle = document.getElementById('exampleModalLabel');
     modalTitle.innerText = ` ${newses.data[0].title}`
-    const modalbody = document.getElementById('modal-body1');
+    const modalBody = document.getElementById('modal-body1');
 
 
     // ----------------All error handle for null value------------------//
@@ -172,12 +171,12 @@ const displayModal = newses => {
     }
 
 
-    modalbody.innerHTML = `
+    modalBody.innerHTML = `
     <img class="w-100"  src="${newses.data[0].image_url}"
     
     <p>Title : ${newses.data[0].title}</p>
     <p>Author name : ${newses.data[0].author.name} </p>
-    <p>Publish date & time : ${newses.data[0].author.published_date} </p>
+    <p>Published date & time : ${newses.data[0].author.published_date} </p>
     <p>Total view : ${newses.data[0].total_view} </p>
     <p>Details of this news : ${newses.data[0].details}</p>
     
@@ -199,7 +198,7 @@ const toggleSpiner = (isloading) => {
 
 
 
-loadCategory()
-loadArticals("01")
+loadCategories()
+loadArticles("01")
 
 
